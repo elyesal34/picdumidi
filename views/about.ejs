@@ -1,48 +1,82 @@
-<section class="page-header">
-    <div class="container">
-        <h1>À propos de ce projet</h1>
-        <p>Découvrez les détails techniques et les fonctionnalités</p>
-    </div>
-</section>
-
-<section class="content">
-    <div class="container">
-        <div class="content-grid">
-            <div class="content-main">
-                <h2>Technologies utilisées</h2>
-                <div class="tech-list">
-                    <% Object.entries(technologies).forEach(([tech, version]) => { %>
-                        <div class="tech-item">
-                            <h3><%= tech %></h3>
-                            <p><%= version %></p>
-                        </div>
-                    <% }); %>
-                </div>
-
-                <h2>Informations système</h2>
-                <div class="system-info">
-                    <% Object.entries(systemInfo).forEach(([label, value]) => { %>
-                        <div class="info-row">
-                            <span class="info-label"><%= label %> :</span>
-                            <span class="info-value"><%= value %></span>
-                        </div>
-                    <% }); %>
-                </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">Mon Site PHP</h1>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">Accueil</a></li>
+                    <li><a href="/about" class="nav-link active">À propos</a></li>
+                    <li><a href="/contact" class="nav-link">Contact</a></li>
+                </ul>
             </div>
+        </nav>
+    </header>
 
-            <div class="content-sidebar">
-                <div class="sidebar-widget">
-                    <h3>Statistiques</h3>
-                    <div class="stats">
-                        <% Object.entries(stats).forEach(([label, value]) => { %>
-                            <div class="stat-item">
-                                <div class="stat-number"><%= value %></div>
-                                <div class="stat-label"><%= label %></div>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>À propos de ce projet</h1>
+                <p>Découvrez les détails techniques et les fonctionnalités</p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-main">
+                        <h2>Technologies utilisées</h2>
+                        <div class="tech-list">
+                            <% Object.entries(technologies).forEach(([tech, version]) => { %>
+                                <div class="tech-item">
+                                    <h3><%= tech %></h3>
+                                    <p><%= version %></p>
+                                </div>
+                            <% }); %>
+                        </div>
+
+                        <h2>Informations système</h2>
+                        <div class="system-info">
+                            <% Object.entries(systemInfo).forEach(([label, value]) => { %>
+                                <div class="info-row">
+                                    <span class="info-label"><%= label %> :</span>
+                                    <span class="info-value"><%= value %></span>
+                                </div>
+                            <% }); %>
+                        </div>
+                    </div>
+
+                    <div class="content-sidebar">
+                        <div class="sidebar-widget">
+                            <h3>Statistiques</h3>
+                            <div class="stats">
+                                <% Object.entries(stats).forEach(([label, value]) => { %>
+                                    <div class="stat-item">
+                                        <div class="stat-number"><%= value %></div>
+                                        <div class="stat-label"><%= label %></div>
+                                    </div>
+                                <% }); %>
                             </div>
-                        <% }); %>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <%= currentYear %> Mon Projet PHP. Tous droits réservés.</p>
         </div>
-    </div>
-</section>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

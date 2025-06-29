@@ -21,12 +21,12 @@
     </header>
 
     <main>
-        <%- body %>
+        <!-- Le contenu sera injecté ici par chaque template -->
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; <%= currentYear %> Mon Projet PHP. Tous droits réservés.</p>
+            <p>&copy; <%= typeof currentYear !== 'undefined' ? currentYear : new Date().getFullYear() %> Mon Projet PHP. Tous droits réservés.</p>
         </div>
     </footer>
 
