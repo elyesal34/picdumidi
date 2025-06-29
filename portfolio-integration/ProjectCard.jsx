@@ -6,7 +6,7 @@ const ProjectCard = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   // ✅ URL de votre projet déployé sur Railway
-  const projectUrl = 'https://picdumidi-production.up.railway.app';
+  const projectUrl = 'https://mon-projet-php-nodejs.onrender.com';
 
   const openProject = () => {
     setIsModalOpen(true);
