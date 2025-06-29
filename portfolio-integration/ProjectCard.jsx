@@ -5,8 +5,8 @@ const ProjectCard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // ⚠️ IMPORTANT: Remplacez par votre URL Railway après déploiement
-  const projectUrl = 'https://votre-projet.up.railway.app';
+  // ⚠️ REMPLACEZ par votre URL Railway (probablement quelque chose comme https://picdumidi-production.up.railway.app)
+  const projectUrl = 'https://picdumidi-production.up.railway.app';
 
   const openProject = () => {
     setIsModalOpen(true);
