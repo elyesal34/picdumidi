@@ -1,0 +1,12 @@
+# Configuration Render.com
+services:
+  - type: web
+    name: mon-projet-php-nodejs
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /health
