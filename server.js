@@ -12,8 +12,13 @@ const PORT = process.env.PORT || 8000;
 const db = new Database();
 
 // Middleware
-app.use(helmet());
-app.use(cors());
+app.use(helmet({
+    contentSecurityPolicy: false, // Pour permettre les iframes si nécessaire
+}));
+app.use(cors({
+    origin: ['https://elyes-allani.netlify.app', 'http://localhost:3000'],
+    credentials: true
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('assets'));
@@ -231,8 +236,13 @@ app.get('/api/stats', async (req, res) => {
     }
 });
 
+// Route de santé pour le déploiement
+app.get('/health', (req, res) => {
+    res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
+
 // Démarrage du serveur
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Serveur démarré sur http://localhost:${PORT}`);
     db.init().then(() => {
         console.log('Base de données initialisée');
