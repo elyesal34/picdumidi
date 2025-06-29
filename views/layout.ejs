@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">Mon Site PHP</h1>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link <%= title.includes('Mon Projet PHP') && !title.includes('-') ? 'active' : '' %>">Accueil</a></li>
+                    <li><a href="/about" class="nav-link <%= title.includes('À propos') ? 'active' : '' %>">À propos</a></li>
+                    <li><a href="/contact" class="nav-link <%= title.includes('Contact') ? 'active' : '' %>">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <%- body %>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <%= currentYear %> Mon Projet PHP. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

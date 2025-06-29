@@ -1,0 +1,48 @@
+<section class="page-header">
+    <div class="container">
+        <h1>À propos de ce projet</h1>
+        <p>Découvrez les détails techniques et les fonctionnalités</p>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container">
+        <div class="content-grid">
+            <div class="content-main">
+                <h2>Technologies utilisées</h2>
+                <div class="tech-list">
+                    <% Object.entries(technologies).forEach(([tech, version]) => { %>
+                        <div class="tech-item">
+                            <h3><%= tech %></h3>
+                            <p><%= version %></p>
+                        </div>
+                    <% }); %>
+                </div>
+
+                <h2>Informations système</h2>
+                <div class="system-info">
+                    <% Object.entries(systemInfo).forEach(([label, value]) => { %>
+                        <div class="info-row">
+                            <span class="info-label"><%= label %> :</span>
+                            <span class="info-value"><%= value %></span>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <div class="content-sidebar">
+                <div class="sidebar-widget">
+                    <h3>Statistiques</h3>
+                    <div class="stats">
+                        <% Object.entries(stats).forEach(([label, value]) => { %>
+                            <div class="stat-item">
+                                <div class="stat-number"><%= value %></div>
+                                <div class="stat-label"><%= label %></div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
